@@ -8,7 +8,7 @@ class CodeEval {
   }
 
   isPrime (integer) {
-    if (integer < 2) return false; // A prime number has only two factors; 1 is neither prime nor composite
+    if (integer < 2) return false; // A prime number has only two factors; 1 is neither prime nor composite; negatives are not prime
     let number = integer,
         isPrime = true;
     for (let i = 2; i*i < number; i++) {
@@ -20,7 +20,8 @@ class CodeEval {
   }
 
   isPalindrome (integer) {
-    if (integer < 1) return false
+    if (integer < 0) return false; // Negatives are not palindromes
+    if (integer < 10) return true; // Single digits are palindromes
     let number = integer,
         numberReversed = 0,
         remainder = 0;
