@@ -14,9 +14,9 @@ var isPrime = function(integer) {
   var numberToCheck = integer,
       divisor = 3;
   if (numberToCheck == 2) return true;
-  if (numberToCheck < 2 || numberToCheck % 2 == 0) return false;
+  if (numberToCheck < 2 || numberToCheck % 2 === 0) return false;
   while(divisor * divisor <= numberToCheck) {
-    if (numberToCheck % divisor == 0) {
+    if (numberToCheck % divisor === 0) {
       return false;
     }
     divisor = divisor + 2;
