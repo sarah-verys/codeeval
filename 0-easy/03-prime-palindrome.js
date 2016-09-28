@@ -12,9 +12,9 @@
 
 var isPrime = function (integer) {
   if (integer < 2) return false; // A prime number has only two factors; 1 is neither prime nor composite; negatives are not prime
-  let number = integer,
+  var number = integer,
       prime = true;
-  for (let i = 2; i*i < number; i++) {
+  for (var i = 2; i*i < number; i++) {
     if (number % i == 0) {
       prime = false;
     }
@@ -25,7 +25,7 @@ var isPrime = function (integer) {
 var isPalindrome = function (integer) {
   if (integer < 0) return false; // Negatives are not palindromes
   if (integer < 10) return true; // Single digits are palindromes
-  let number = integer,
+  var number = integer,
       numberReversed = 0,
       remainder = 0;
   while (number > 0) {
@@ -38,9 +38,9 @@ var isPalindrome = function (integer) {
 
 var printPrimePalindrome = function (start) {
   if (isNaN(start)) throw `Invalid limit: ${start} (${typeof start})`;
-  let largestPrimePalindrome = 0,
+  var largestPrimePalindrome = 0,
       limit = Number.parseInt(start);
-  for (let i = limit; !largestPrimePalindrome && i > 2; i--) {
+  for (var i = limit; !largestPrimePalindrome && i > 2; i--) {
     if (isPrime(i) && isPalindrome(i)) {
       largestPrimePalindrome = i;
     }
